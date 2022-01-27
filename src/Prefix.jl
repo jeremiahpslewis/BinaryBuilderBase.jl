@@ -594,6 +594,8 @@ function setup_dependencies(prefix::Prefix,
         for dep in installed_jlls
             # If the `tree_hash` is `nothing`, then this JLL was treated as an stdlib
             if dep.tree_hash === nothing
+                print(dep.name)
+                print(dep.version)
                 # Figure out what version this stdlib _should_ be at for this version
                 dep.version = stdlib_version(dep.uuid, julia_version)
 
